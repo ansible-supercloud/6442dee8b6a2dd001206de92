@@ -1,0 +1,40 @@
+variables:
+  - name: aks-container-deployment_name
+    type: string
+    description: The name of the resource group
+  - name: azure-storage-blob_storage_account_name
+    type: string
+    description: The name of the Azure Storage Account
+  - name: blob_resource_group_name
+    type: string
+    description: The name of the resource group
+  - name: client_id
+    type: string
+  - name: data-hub-connection_name
+    type: string
+    description: The name of the resource group
+  - name: databricks-workspace_name
+    type: string
+    description: The name of the resource group
+  - name: oracle-database-connection_name
+    type: string
+    description: The name of the resource group
+  - name: pfna-data-lake-connection_name
+    type: string
+    description: The name of the resource group
+  - name: region
+    type: string
+    description: The Azure location where the resource group will be provisioned
+  - name: resource_group_name
+    type: string
+    description: The name of the resource group
+  - name: salesforce-connection_name
+    type: string
+    description: The name of the resource group
+  - name: subscription_id
+    type: string
+  - name: tenant_id
+    type: string
+  - name: teradata-connection_name
+    type: string
+    description: The name of the resource group

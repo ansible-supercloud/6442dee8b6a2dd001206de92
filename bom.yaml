@@ -1,0 +1,98 @@
+apiVersion: cloudnativetoolkit.dev/v2
+kind: Solution
+metadata:
+  name: Data Science Environment
+  annotations:
+    displayName: >-
+      Solution based on Azure Storage Blob, Azure VNet and AKS Container
+      Deployment, Databricks Workspace, Salesforce Connection, Teradata
+      Connection, PFNA Data Lake Connection, Data Hub Connection, Oracle
+      Database Connection on Azure.
+    description: >-
+      Solution based on Azure Storage Blob, Azure VNet and AKS Container
+      Deployment, Databricks Workspace, Salesforce Connection, Teradata
+      Connection, PFNA Data Lake Connection, Data Hub Connection, Oracle
+      Database Connection in Production reference architecture deployed on Azure
+spec:
+  stack:
+    - name: 101-azure-vnet-std
+      layer: infrastructure
+      description: Azure base infrastructure
+      version: v1.0.1
+    - name: 150-azure-storage-blob
+      layer: infrastructure
+      description: Provision a storage blob on Azure
+      version: v1.0.0
+    - name: 350-data-hub-connection
+      layer: software
+      description: Data Hub Connection
+      version: v1.0.0
+    - name: 350-oracle-database-connection
+      layer: software
+      description: Oracle Database Connection
+      version: v1.0.0
+    - name: 350-pfna-data-lake-connection
+      layer: software
+      description: PFNA Data Lake Connection
+      version: v1.0.0
+    - name: 350-salesforce-connection
+      layer: software
+      description: Salesforce Connection
+      version: v1.0.0
+    - name: 350-teradata-connection
+      layer: software
+      description: Teradata Connection
+      version: v1.0.0
+    - name: 470-databricks-workspace
+      layer: software
+      description: Databricks Workspace
+      version: v1.0.0
+    - name: 540-aks-container-deployment
+      layer: software
+      description: AKS Container Deployment
+      version: v1.0.0
+  version: v1.0.0
+  variables:
+    - name: aks-container-deployment_name
+      type: string
+      description: The name of the resource group
+    - name: azure-storage-blob_storage_account_name
+      type: string
+      description: The name of the Azure Storage Account
+    - name: blob_resource_group_name
+      type: string
+      description: The name of the resource group
+    - name: client_id
+      type: string
+    - name: client_secret
+      type: string
+      sensitive: true
+    - name: data-hub-connection_name
+      type: string
+      description: The name of the resource group
+    - name: databricks-workspace_name
+      type: string
+      description: The name of the resource group
+    - name: oracle-database-connection_name
+      type: string
+      description: The name of the resource group
+    - name: pfna-data-lake-connection_name
+      type: string
+      description: The name of the resource group
+    - name: region
+      type: string
+      description: The Azure location where the resource group will be provisioned
+    - name: resource_group_name
+      type: string
+      description: The name of the resource group
+    - name: salesforce-connection_name
+      type: string
+      description: The name of the resource group
+    - name: subscription_id
+      type: string
+    - name: tenant_id
+      type: string
+    - name: teradata-connection_name
+      type: string
+      description: The name of the resource group
+  files: []
